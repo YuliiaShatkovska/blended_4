@@ -24,8 +24,17 @@ export const todosSlice = createSlice({
       },
     },
 
-    deleteTodo: (state, { payload }) => {},
-    updateTodo: (state, { payload }) => {},
+    deleteTodo: (state, { payload }) => {
+      state.todos = state.todos.filter(todo => todo.id !== payload)
+    },
+    updateTodo: (state, { payload }) => {
+      state.todos = state.todos.map(todo => {
+        if (todo.id === payload.id) {
+          todo.text = payload.text
+          return todo
+        } return todo
+      })
+    },
   },
 });
 
