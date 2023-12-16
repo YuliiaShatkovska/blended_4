@@ -4,6 +4,7 @@ import { Container, Header, SearchForm, Section } from "components";
 import { useDispatch } from "react-redux";
 import { fetchWeather } from "../../redux/operations";
 import { useEffect } from "react";
+import FormikSearch from "components/SearchForm/FormikSearch";
 
 export const App = () => {
   // const [todos, setTodos] = useState(() =>
@@ -27,6 +28,7 @@ export const App = () => {
       <Section>
         <Container>
           <SearchForm />
+          <FormikSearch />
           <TodoList />
         </Container>
       </Section>
